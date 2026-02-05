@@ -720,7 +720,10 @@ footer {
                 Where architectural excellence meets thoughtful design. 
                 Experience homes crafted with precision, elegance, and a vision for the future.
             </p>
-            <a href="#projects" class="cta-button">Explore Our Work</a>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#projects" class="cta-button">Explore Our Work</a>
+                <button onclick="openBrochureModal()" class="cta-button" style="background: transparent; color: var(--primary-dark); cursor: pointer;">Download Brochure</button>
+            </div>
         </div>
     </section>
 
@@ -894,7 +897,11 @@ footer {
             <h2 class="modal-title">Get in Touch</h2>
             <p class="modal-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
             
-            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                <input type="hidden" name="subject" value="New Contact Form Submission - Prarambh Group">
+                <input type="hidden" name="from_name" value="Prarambh Group Website">
+                
                 <div class="form-group">
                     <label class="form-label" for="name">Full Name *</label>
                     <input type="text" id="name" name="name" class="form-input" required>
@@ -918,6 +925,53 @@ footer {
                 <button type="submit" class="form-submit">Send Message</button>
                 
                 <div id="formMessage" class="form-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Brochure Download Modal -->
+    <div id="brochureModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeBrochureModal()">&times;</button>
+            <h2 class="modal-title">Download Brochure</h2>
+            <p class="modal-subtitle">Please fill in your details to receive our exclusive project brochure.</p>
+            
+            <form id="brochureForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                <input type="hidden" name="subject" value="Brochure Download Request - Prarambh Group">
+                <input type="hidden" name="from_name" value="Prarambh Group Website">
+                <input type="hidden" name="redirect" value="">
+                
+                <div class="form-group">
+                    <label class="form-label" for="brochure-name">Full Name *</label>
+                    <input type="text" id="brochure-name" name="name" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="brochure-email">Email Address *</label>
+                    <input type="email" id="brochure-email" name="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="brochure-phone">Phone Number *</label>
+                    <input type="tel" id="brochure-phone" name="phone" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="interest">Interested In</label>
+                    <select id="interest" name="interest" class="form-input">
+                        <option value="">Select an option</option>
+                        <option value="2 BHK">2 BHK</option>
+                        <option value="3 BHK">3 BHK</option>
+                        <option value="4 BHK">4 BHK</option>
+                        <option value="Penthouse">Penthouse</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="form-submit">Download Brochure</button>
+                
+                <div id="brochureFormMessage" class="form-message"></div>
             </form>
         </div>
     </div>
@@ -981,6 +1035,17 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
+// Brochure Modal Functions
+function openBrochureModal() {
+    document.getElementById('brochureModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeBrochureModal() {
+    document.getElementById('brochureModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
 // Close modal when clicking outside
 document.getElementById('contactModal').addEventListener('click', function(e) {
     if (e.target === this) {
@@ -988,10 +1053,17 @@ document.getElementById('contactModal').addEventListener('click', function(e) {
     }
 });
 
+document.getElementById('brochureModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeBrochureModal();
+    }
+});
+
 // Close modal with Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeModal();
+        closeBrochureModal();
     }
 });
 
@@ -1010,16 +1082,15 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const formData = new FormData(this);
     
     try {
-        // Send to Formspree (or your chosen service)
-        const response = await fetch(this.action, {
+        // Send to Web3Forms
+        const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+            body: formData
         });
         
-        if (response.ok) {
+        const data = await response.json();
+        
+        if (data.success) {
             // Success
             messageDiv.textContent = 'Thank you! We will contact you soon.';
             messageDiv.className = 'form-message success';
@@ -1043,6 +1114,69 @@ document.getElementById('contactForm').addEventListener('submit', async function
         // Re-enable submit button
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Message';
+    }
+});
+
+// Brochure Form submission handling
+document.getElementById('brochureForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = this.querySelector('.form-submit');
+    const messageDiv = document.getElementById('brochureFormMessage');
+    
+    // Disable submit button
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Processing...';
+    
+    // Get form data
+    const formData = new FormData(this);
+    
+    try {
+        // Send to Web3Forms
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            // Success - trigger download
+            messageDiv.textContent = 'Thank you! Your download will begin shortly...';
+            messageDiv.className = 'form-message success';
+            messageDiv.style.display = 'block';
+            this.reset();
+            
+            // Trigger brochure download
+            setTimeout(() => {
+                // Download the brochure PDF
+                const link = document.createElement('a');
+                link.href = './brochures/vimal-paradise-brochure.pdf';
+                link.download = 'Vimal-Paradise-Brochure.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Close modal after download starts
+                setTimeout(() => {
+                    closeBrochureModal();
+                    messageDiv.style.display = 'none';
+                }, 1500);
+            }, 500);
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        // Error
+        messageDiv.textContent = 'Oops! Something went wrong. Please try again.';
+        messageDiv.className = 'form-message error';
+        messageDiv.style.display = 'block';
+    } finally {
+        // Re-enable submit button after delay
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Download Brochure';
+        }, 2000);
     }
 });    </script>
 </body>
