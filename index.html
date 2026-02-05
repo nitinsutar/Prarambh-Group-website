@@ -240,14 +240,18 @@ nav {
 .project-image {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4/3;
+    min-height: 400px;
     background: var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.6s ease;
 }
 
@@ -364,21 +368,26 @@ nav {
 }
 
 .gallery-item {
-    aspect-ratio: 1;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
     background: var(--border-light);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-item:nth-child(1) {
     grid-column: span 2;
     grid-row: span 2;
+    min-height: 600px;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.6s ease;
 }
 
@@ -482,14 +491,23 @@ footer {
     .project-grid {
         grid-template-columns: 1fr;
     }
+    
+    .project-image {
+        min-height: 350px;
+    }
 
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .gallery-item:nth-child(1) {
-        grid-column: span 1;
+        grid-column: span 2;
         grid-row: span 1;
+        min-height: 400px;
+    }
+    
+    .gallery-item {
+        min-height: 250px;
     }
 }
 
@@ -521,6 +539,10 @@ footer {
     .project-details {
         padding: 2rem 1rem;
     }
+    
+    .project-image {
+        min-height: 300px;
+    }
 
     .features-grid {
         grid-template-columns: 1fr;
@@ -530,6 +552,16 @@ footer {
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    .gallery-item {
+        min-height: 250px;
+    }
+    
+    .gallery-item:nth-child(1) {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 300px;
     }
 
     .contact-info {
@@ -1235,7 +1267,7 @@ footer {
                 </div>
                 <div class="footer-contact-item">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    <span>info@prarambhgroup.com</span>
+                    <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="066f6860694676746774676b646e61746973762865696b">[email&#160;protected]</a></span>
                 </div>
             </div>
         </div>
@@ -1250,7 +1282,7 @@ footer {
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -1442,13 +1474,4 @@ document.getElementById('brochureForm').addEventListener('submit', async functio
         messageDiv.textContent = 'Oops! Something went wrong. Please try again.';
         messageDiv.className = 'form-message error';
         messageDiv.style.display = 'block';
-    } finally {
-        // Re-enable submit button after delay
-        setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Download Brochure';
-        }, 2000);
-    }
-});    </script>
-</body>
-</html>
+    } final
