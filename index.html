@@ -1349,79 +1349,95 @@ function closeBrochureModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Close modal when clicking outside
-document.getElementById('contactModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeModal();
-    }
-});
-
-document.getElementById('brochureModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeBrochureModal();
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeModal();
-        closeBrochureModal();
-    }
-});
-
-// Form submission handling
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const submitBtn = this.querySelector('.form-submit');
-    const messageDiv = document.getElementById('formMessage');
-    
-    // Disable submit button
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    
-    // Get form data
-    const formData = new FormData(this);
-    
-    try {
-        // Send to Web3Forms
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            // Success
-            messageDiv.textContent = 'Thank you! We will contact you soon.';
-            messageDiv.className = 'form-message success';
-            messageDiv.style.display = 'block';
-            this.reset();
-            
-            // Close modal after 2 seconds
-            setTimeout(() => {
+// Wait for DOM to be fully loaded before adding event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Close modal when clicking outside
+    const contactModal = document.getElementById('contactModal');
+    if (contactModal) {
+        contactModal.addEventListener('click', function(e) {
+            if (e.target === this) {
                 closeModal();
-                messageDiv.style.display = 'none';
-            }, 2000);
-        } else {
-            throw new Error('Form submission failed');
-        }
-    } catch (error) {
-        // Error
-        messageDiv.textContent = 'Oops! Something went wrong. Please try again.';
-        messageDiv.className = 'form-message error';
-        messageDiv.style.display = 'block';
-    } finally {
-        // Re-enable submit button
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
+            }
+        });
     }
+
+    const brochureModal = document.getElementById('brochureModal');
+    if (brochureModal) {
+        brochureModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBrochureModal();
+            }
+        });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+            closeBrochureModal();
+        }
+    });
 });
 
-// Brochure Form submission handling
-document.getElementById('brochureForm').addEventListener('submit', async function(e) {
+// Form submission handlers - wait for DOM
+document.addEventListener('DOMContentLoaded', function() {
+    // Contact Form submission handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.form-submit');
+            const messageDiv = document.getElementById('formMessage');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            try {
+                // Send to Web3Forms
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Success
+                    messageDiv.textContent = 'Thank you! We will contact you soon.';
+                    messageDiv.className = 'form-message success';
+                    messageDiv.style.display = 'block';
+                    this.reset();
+                    
+                    // Close modal after 2 seconds
+                    setTimeout(() => {
+                        closeModal();
+                        messageDiv.style.display = 'none';
+                    }, 2000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error
+                messageDiv.textContent = 'Oops! Something went wrong. Please try again.';
+                messageDiv.className = 'form-message error';
+                messageDiv.style.display = 'block';
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    }
+
+    // Brochure Form submission handling
+    const brochureForm = document.getElementById('brochureForm');
+    if (brochureForm) {
+        brochureForm.addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const submitBtn = this.querySelector('.form-submit');
@@ -1474,4 +1490,16 @@ document.getElementById('brochureForm').addEventListener('submit', async functio
         messageDiv.textContent = 'Oops! Something went wrong. Please try again.';
         messageDiv.className = 'form-message error';
         messageDiv.style.display = 'block';
-    } final
+    } finally {
+        // Re-enable submit button after delay
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Download Brochure';
+        }, 2000);
+    }
+        });
+    }
+});
+    </script>
+</body>
+</html>
