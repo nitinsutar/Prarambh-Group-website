@@ -57,6 +57,19 @@
             letter-spacing: 2px;
             color: var(--primary-dark);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            height: 46px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo span {
+            color: var(--primary-dark);
         }
 
         .legal-container {
@@ -144,6 +157,24 @@
             text-decoration: underline;
         }
 
+        .site-footer {
+            background: var(--primary-dark);
+            color: var(--primary-light);
+            margin-top: 3rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .site-footer img {
+            height: 56px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+
+        .site-footer a {
+            color: var(--accent-gold);
+        }
+
         @media (max-width: 768px) {
             .legal-container {
                 padding: 6rem 1.5rem 3rem;
@@ -162,7 +193,7 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="./index.html" class="logo">PRARAMBH GROUP</a>
+            <a href="./index.html" class="logo"><img src="assets/prarambh-logo.png" alt="Prarambh Group logo"><span>PRARAMBH GROUP</span></a>
         </div>
     </nav>
 
@@ -415,14 +446,10 @@
 
             <h3>Prarambh Group</h3>
             <p>
-                <strong>Address:</strong> [31, Seagull Angelore Society, Pestom Sagar, Chembur, Mumbai - 89]<br>
-                Mumbai, Maharashtra, India<br><br>
-                
-                <strong>Email:</strong> <a href="mailto:privacy@prarambhgroup.com" style="color: var(--accent-gold);">privacy@prarambhgroup.com</a><br>
-                <strong>Phone:</strong> +91 8879881688/788<br><br>
-                
-                <strong>Data Protection Officer:</strong> [Name]<br>
-                <strong>DPO Email:</strong> <a href="mailto:dpo@prarambhgroup.com" style="color: var(--accent-gold);">dpo@prarambhgroup.com</a>
+                <strong>Address:</strong> 31, Seagull Angelore Society, Pestom Sagar, Chembur, Mumbai - 400089<br><br>
+                <strong>Email:</strong> <a href="mailto:sales@prarambhgroup.co.in" style="color: var(--accent-gold);">sales@prarambhgroup.co.in</a><br>
+                <strong>Phone:</strong> +91 8879881688 / +91 8879881788<br><br>
+                <strong>Response Team:</strong> Prarambh Group Customer Relations
             </p>
 
             <p style="margin-top: 1.5rem;"><strong>Response Time:</strong> We will respond to your inquiries within 30 days of receipt.</p>
@@ -435,5 +462,10 @@
             <a href="./cookie-policy.html">Cookie Policy</a>
         </p>
     </div>
+    <footer class="site-footer">
+        <img src="assets/prarambh-logo.png" alt="Prarambh Group logo">
+        <p>Prarambh Group · 31, Seagull Angelore Society, Pestom Sagar, Chembur, Mumbai - 400089</p>
+        <p><a href="mailto:sales@prarambhgroup.co.in">sales@prarambhgroup.co.in</a> · <a href="tel:+918879881688">+91 8879881688</a></p>
+    </footer>
 </body>
 </html>
