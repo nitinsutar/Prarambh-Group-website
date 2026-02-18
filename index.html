@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prarambh Group - Vimal Paradise</title>
+    <meta name="description" content="Prarambh Group - Premium real estate development in Mumbai. Discover Vimal Paradise, luxury residential apartments with world-class amenities.">
+    <meta name="keywords" content="real estate Mumbai, luxury apartments, Vimal Paradise, Prarambh Group, premium housing">
+    <title>Prarambh Group - Redefining Luxury Living in Mumbai</title>
+    
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
 :root {
     --primary-dark: #1a1a1a;
@@ -79,33 +84,17 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
     list-style: none;
 }
 
 .nav-links a {
-    text-decoration: none;
     color: var(--text-dark);
+    text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 400;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--accent-gold);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
+    text-transform: uppercase;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
@@ -118,48 +107,42 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    background: linear-gradient(135deg, #f8f7f4 0%, #e8e6e1 100%);
-    margin-top: 73px;
+    text-align: center;
+    padding: 0 2rem;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--border-light) 100%);
 }
 
 .hero-content {
-    text-align: center;
     max-width: 900px;
-    padding: 2rem;
-    animation: fadeInUp 1s ease-out;
 }
 
 .hero-subtitle {
-    font-size: 0.85rem;
-    letter-spacing: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent-muted);
     margin-bottom: 1.5rem;
-    font-weight: 400;
 }
 
 .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 5.5rem;
+    font-size: 4.5rem;
     font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 2rem;
+    line-height: 1.2;
     color: var(--primary-dark);
-    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
 }
 
 .hero-description {
     font-size: 1.1rem;
     color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto 3rem;
+    margin-bottom: 3rem;
     line-height: 1.8;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 1rem 3rem;
+    padding: 1rem 2.5rem;
     background: var(--primary-dark);
     color: var(--primary-light);
     text-decoration: none;
@@ -167,9 +150,11 @@ nav {
     letter-spacing: 2px;
     text-transform: uppercase;
     border: 2px solid var(--primary-dark);
-    transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .cta-button::before {
@@ -180,7 +165,7 @@ nav {
     width: 100%;
     height: 100%;
     background: var(--accent-gold);
-    transition: left 0.4s ease;
+    transition: left 0.4s;
     z-index: -1;
 }
 
@@ -190,7 +175,7 @@ nav {
 
 .cta-button:hover {
     border-color: var(--accent-gold);
-    color: var(--primary-dark);
+    color: var(--primary-light);
 }
 
 /* Project Section */
@@ -200,36 +185,15 @@ nav {
     margin: 0 auto;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 5rem;
-}
-
-.section-label {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent-muted);
-    margin-bottom: 1rem;
-}
-
 .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 300;
+    text-align: center;
+    margin-bottom: 4rem;
     color: var(--primary-dark);
-    margin-bottom: 1.5rem;
 }
 
-.section-description {
-    font-size: 1.05rem;
-    color: var(--text-light);
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.8;
-}
-
-/* Project Grid */
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -252,7 +216,8 @@ nav {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.6s ease;
+    transition: transform 0.6s;
+    display: block;
 }
 
 .project-image:hover img {
@@ -260,35 +225,41 @@ nav {
 }
 
 .project-details {
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 3rem;
 }
 
 .project-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
-    font-weight: 400;
     margin-bottom: 1.5rem;
     color: var(--primary-dark);
+}
+
+.project-description {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.8;
 }
 
 .project-meta {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .meta-item {
-    border-left: 2px solid var(--accent-gold);
-    padding-left: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
 .meta-label {
     font-size: 0.75rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--accent-muted);
     margin-bottom: 0.5rem;
@@ -297,60 +268,46 @@ nav {
 .meta-value {
     font-size: 1.1rem;
     color: var(--text-dark);
-    font-weight: 400;
+    font-weight: 500;
 }
 
-/* Features Section */
+/* Features */
 .features {
     background: var(--primary-dark);
     color: var(--primary-light);
     padding: 8rem 3rem;
 }
 
-.features-container {
+.features-grid {
     max-width: 1400px;
     margin: 0 auto;
-}
-
-.features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 4rem;
     margin-top: 4rem;
 }
 
 .feature-item {
     text-align: center;
-    padding: 2rem;
-    transition: transform 0.3s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-10px);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
 .feature-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 1.5rem;
-    border: 2px solid var(--accent-gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-gold);
 }
 
 .feature-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
-    font-weight: 400;
+    color: var(--primary-light);
 }
 
 .feature-description {
     color: rgba(248, 247, 244, 0.7);
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 /* Gallery */
@@ -388,30 +345,24 @@ nav {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.6s ease;
+    transition: transform 0.6s;
+    display: block;
 }
 
 .gallery-item:hover img {
     transform: scale(1.1);
 }
 
-/* Contact Section */
+/* Contact */
 .contact {
-    background: linear-gradient(135deg, #f8f7f4 0%, #e8e6e1 100%);
     padding: 8rem 3rem;
+    background: var(--border-light);
 }
 
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-}
-
-.contact-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: var(--primary-dark);
 }
 
 .contact-info {
@@ -428,7 +379,7 @@ nav {
 
 .contact-label {
     font-size: 0.75rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--accent-muted);
     margin-bottom: 0.5rem;
@@ -439,39 +390,182 @@ nav {
     color: var(--text-dark);
 }
 
-.contact-value a {
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(5px);
 }
 
-.contact-value a:hover {
-    color: var(--accent-gold);
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--primary-light);
+    padding: 3rem;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--primary-dark);
+}
+
+.modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.modal-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-muted);
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border-light);
+    background: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-dark);
+    color: var(--primary-light);
+    border: 2px solid var(--primary-dark);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.form-submit:hover {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
+.form-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.form-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    display: none;
+}
+
+.form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
 }
 
 /* Footer */
 footer {
     background: var(--primary-dark);
     color: var(--primary-light);
-    padding: 3rem;
-    text-align: center;
+    padding: 4rem 3rem 2rem;
 }
 
 .footer-content {
     max-width: 1400px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
 }
 
-.footer-text {
+.footer-links a {
+    color: rgba(248, 247, 244, 0.7);
+    text-decoration: none;
     font-size: 0.9rem;
-    color: rgba(248, 247, 244, 0.6);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: rgba(248, 247, 244, 0.5);
+    margin-top: 2rem;
 }
 
 /* Animations */
@@ -522,7 +616,7 @@ footer {
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .section-title {
@@ -568,766 +662,250 @@ footer {
         flex-direction: column;
         gap: 2rem;
     }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.2rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .cta-button {
-        padding: 0.875rem 2rem;
-        font-size: 0.8rem;
-    }
-}
-
-/* Contact Form Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(26, 26, 26, 0.9);
-    backdrop-filter: blur(5px);
-    animation: fadeIn 0.3s ease;
-}
-
-.modal.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background: var(--primary-light);
-    padding: 3rem;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-    animation: slideUp 0.4s ease;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-
-.modal-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--text-light);
-    transition: color 0.3s ease;
-    background: none;
-    border: none;
-    line-height: 1;
-}
-
-.modal-close:hover {
-    color: var(--primary-dark);
-}
-
-.modal-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-dark);
-}
-
-.modal-subtitle {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-label {
-    display: block;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--accent-muted);
-    margin-bottom: 0.5rem;
-}
-
-.form-input,
-.form-textarea {
-    width: 100%;
-    padding: 0.875rem 1rem;
-    border: 1px solid var(--border-light);
-    background: white;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 1rem;
-    color: var(--text-dark);
-    transition: border-color 0.3s ease;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--accent-gold);
-}
-
-.form-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.form-submit {
-    width: 100%;
-    padding: 1rem;
-    background: var(--primary-dark);
-    color: var(--primary-light);
-    border: 2px solid var(--primary-dark);
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    font-family: 'Work Sans', sans-serif;
-}
-
-.form-submit:hover {
-    background: var(--accent-gold);
-    border-color: var(--accent-gold);
-    color: var(--primary-dark);
-}
-
-.form-submit:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.form-message {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 4px;
-    display: none;
-}
-
-.form-message.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.form-message.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-/* Footer */
-footer {
-    background: var(--primary-dark);
-    color: var(--primary-light);
-    padding: 0;
-}
-
-.footer-main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 4rem 3rem 2rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem;
-    border-bottom: 1px solid rgba(248, 247, 244, 0.1);
-}
-
-.footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.footer-logo img {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-}
-
-.footer-logo-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    color: var(--primary-light);
-}
-
-.footer-tagline {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: rgba(248, 247, 244, 0.7);
-    max-width: 350px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.social-link {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(248, 247, 244, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-light);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    border-color: var(--accent-gold);
-    background: var(--accent-gold);
-    color: var(--primary-dark);
-}
-
-.footer-section h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-light);
-    font-weight: 400;
-}
-
-.footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.footer-links a {
-    color: rgba(248, 247, 244, 0.7);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-    display: block;
-}
-
-.footer-links a:hover {
-    color: var(--accent-gold);
-    padding-left: 5px;
-}
-
-.footer-contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    color: rgba(248, 247, 244, 0.7);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.footer-contact-item svg {
-    width: 18px;
-    height: 18px;
-    margin-top: 2px;
-    flex-shrink: 0;
-}
-
-.footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.footer-copyright {
-    font-size: 0.85rem;
-    color: rgba(248, 247, 244, 0.5);
-}
-
-.footer-legal {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
-.footer-legal a {
-    color: rgba(248, 247, 244, 0.5);
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s ease;
-}
-
-.footer-legal a:hover {
-    color: var(--accent-gold);
-}
-
-/* Footer Responsive */
-@media (max-width: 1024px) {
-    .footer-main {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-main {
-        grid-template-columns: 1fr;
-        padding: 3rem 1.5rem 1.5rem;
-    }
     
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem;
-    }
-    
-    .footer-legal {
-        flex-direction: column;
-        gap: 0.5rem;
+    .modal-content {
+        padding: 2rem 1.5rem;
     }
 }
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}    </style>
+    </style>
 </head>
-<body>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="./assets/prarambh-logo.png" alt="Prarambh Group" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="https://via.placeholder.com/150x50/1a1a1a/d4af37?text=PRARAMBH" alt="Prarambh Group" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <span class="logo-text" style="display: none;">PRARAMBH GROUP</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="hero-subtitle">Creating Spaces That Inspire</div>
+            <p class="hero-subtitle">Creating Spaces That Inspire</p>
             <h1 class="hero-title">Redefining Luxury Living</h1>
             <p class="hero-description">
-                Where architectural excellence meets thoughtful design. 
-                Experience homes crafted with precision, elegance, and a vision for the future.
+                Where architectural excellence meets thoughtful design. Experience homes crafted with precision, elegance, and a vision for the future.
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="#projects" class="cta-button">Explore Our Work</a>
-                <button onclick="openBrochureModal()" class="cta-button" style="background: transparent; color: var(--primary-dark); cursor: pointer;">Download Brochure</button>
+                <button onclick="openBrochureModal()" class="cta-button" style="background: transparent; color: var(--primary-dark);">Download Brochure</button>
             </div>
         </div>
     </section>
 
-    <!-- Project Section -->
+    <!-- Projects -->
     <section class="project-section" id="projects">
-        <div class="section-header">
-            <div class="section-label">Featured Project</div>
-            <h2 class="section-title">Vimal Paradise</h2>
-            <p class="section-description">
-                A masterpiece of contemporary architecture nestled in the heart of the city. 
-                Vimal Paradise represents our commitment to creating living spaces that harmonize 
-                luxury, comfort, and modern aesthetics.
-            </p>
-        </div>
-
+        <h2 class="section-title">Featured Project</h2>
         <div class="project-grid">
             <div class="project-image">
-                <img src="./images/vimal-paradise-main.jpg" alt="Vimal Paradise Exterior">
+                <img src="https://via.placeholder.com/800x600/e8e6e1/8b7355?text=Vimal+Paradise" alt="Vimal Paradise" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22%3E%3Crect fill=%22%23e8e6e1%22 width=%22800%22 height=%22600%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%238b7355%22%3EVimal Paradise%3C/text%3E%3C/svg%3E';">
             </div>
             <div class="project-details">
                 <h3 class="project-name">Vimal Paradise</h3>
+                <p class="project-description">
+                    An architectural masterpiece offering premium residences with panoramic views. Designed for those who appreciate the finer things in life.
+                </p>
                 <div class="project-meta">
                     <div class="meta-item">
-                        <div class="meta-label">Location</div>
-                        <div class="meta-value">Opp. Mulund East Station</div>
+                        <div class="meta-label">Configuration</div>
+                        <div class="meta-value">1, 2 & 3 BHK</div>
                     </div>
                     <div class="meta-item">
-                        <div class="meta-label">Type</div>
-                        <div class="meta-value">Residential Complex</div>
+                        <div class="meta-label">Location</div>
+                        <div class="meta-value">Mumbai</div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">Status</div>
-                        <div class="meta-value">Bookings open</div>
+                        <div class="meta-value">Ready to Move</div>
                     </div>
                     <div class="meta-item">
-                        <div class="meta-label">Units</div>
-                        <div class="meta-value">Premium Apartments</div>
+                        <div class="meta-label">RERA</div>
+                        <div class="meta-value">Registered</div>
                     </div>
                 </div>
-                <p class="section-description" style="margin: 0;">
-                    Thoughtfully designed residences that blend modern architecture with functional elegance. 
-                    Every detail has been carefully considered to create a living experience that exceeds expectations.
-                </p>
+                <button onclick="openModal()" class="cta-button" style="cursor: pointer;">Schedule Consultation</button>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features -->
     <section class="features">
-        <div class="features-container">
-            <div class="section-header">
-                <div class="section-label" style="color: var(--accent-gold);">Distinctive Features</div>
-                <h2 class="section-title" style="color: var(--primary-light);">Crafted for Excellence</h2>
-            </div>
-
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 class="section-title">Why Choose Prarambh Group</h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon">✦</div>
-                    <h3 class="feature-title">Premium Architecture</h3>
-                    <p class="feature-description">
-                        Contemporary design that stands the test of time, merging aesthetic beauty with structural integrity.
-                    </p>
+                    <div class="feature-icon">🏗️</div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p class="feature-description">Built with the finest materials and exceptional craftsmanship</p>
                 </div>
-
                 <div class="feature-item">
-                    <div class="feature-icon">◈</div>
-                    <h3 class="feature-title">Strategic Location</h3>
-                    <p class="feature-description">
-                        Perfectly positioned with seamless connectivity to major hubs, schools, and lifestyle amenities.
-                    </p>
+                    <div class="feature-icon">📍</div>
+                    <h3 class="feature-title">Prime Locations</h3>
+                    <p class="feature-description">Strategically located for connectivity and lifestyle</p>
                 </div>
-
                 <div class="feature-item">
-                    <div class="feature-icon">✧</div>
-                    <h3 class="feature-title">Modern Amenities</h3>
-                    <p class="feature-description">
-                        State-of-the-art facilities designed to elevate your lifestyle and provide unparalleled comfort.
-                    </p>
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">World-Class Amenities</h3>
+                    <p class="feature-description">Everything you need for modern living</p>
                 </div>
-
                 <div class="feature-item">
-                    <div class="feature-icon">◆</div>
-                    <h3 class="feature-title">Quality Craftsmanship</h3>
-                    <p class="feature-description">
-                        Meticulous attention to detail in every aspect, from materials to finishing touches.
-                    </p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">✱</div>
-                    <h3 class="feature-title">Green Spaces</h3>
-                    <p class="feature-description">
-                        Thoughtfully integrated landscaping that brings nature into your everyday living experience.
-                    </p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">◇</div>
-                    <h3 class="feature-title">Security & Safety</h3>
-                    <p class="feature-description">
-                        Comprehensive security systems ensuring peace of mind for you and your loved ones.
-                    </p>
+                    <div class="feature-icon">🏅</div>
+                    <h3 class="feature-title">Trusted Developer</h3>
+                    <p class="feature-description">Years of excellence in real estate</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery -->
     <section class="gallery">
-        <div class="section-header">
-            <div class="section-label">Visual Journey</div>
-            <h2 class="section-title">Explore Vimal Paradise</h2>
-        </div>
-
+        <h2 class="section-title">Gallery</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="./images/gallery-1.jpg" alt="Vimal Paradise Featured View">
+                <img src="https://via.placeholder.com/800x800/f8f7f4/8b7355?text=Featured+View" alt="Gallery 1" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22800%22%3E%3Crect fill=%22%23f8f7f4%22 width=%22800%22 height=%22800%22/%3E%3C/svg%3E';">
             </div>
             <div class="gallery-item">
-                <img src="./images/gallery-2.jpg" alt="Vimal Paradise Interiors">
+                <img src="https://via.placeholder.com/400x400/e8e6e1/8b7355?text=Interiors" alt="Gallery 2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23e8e6e1%22 width=%22400%22 height=%22400%22/%3E%3C/svg%3E';">
             </div>
             <div class="gallery-item">
-                <img src="./images/gallery-3.jpg" alt="Vimal Paradise Amenities">
+                <img src="https://via.placeholder.com/400x400/f8f7f4/8b7355?text=Amenities" alt="Gallery 3" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23f8f7f4%22 width=%22400%22 height=%22400%22/%3E%3C/svg%3E';">
             </div>
             <div class="gallery-item">
-                <img src="./images/gallery-4.jpg" alt="Vimal Paradise Landscaping">
+                <img src="https://via.placeholder.com/400x400/e8e6e1/8b7355?text=Landscaping" alt="Gallery 4" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23e8e6e1%22 width=%22400%22 height=%22400%22/%3E%3C/svg%3E';">
             </div>
             <div class="gallery-item">
-                <img src="./images/gallery-5.jpg" alt="Vimal Paradise Exteriors">
+                <img src="https://via.placeholder.com/400x400/f8f7f4/8b7355?text=Exteriors" alt="Gallery 5" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23f8f7f4%22 width=%22400%22 height=%22400%22/%3E%3C/svg%3E';">
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="contact-container">
-            <div class="section-label">Get In Touch</div>
-            <h2 class="contact-title">Start Your Journey</h2>
-            <p class="section-description">
-                Discover how Prarambh Group can help you find your perfect home. 
-                Our team is ready to guide you through every step of your journey.
-            </p>
-
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="hero-description">Ready to find your dream home? Contact us today.</p>
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">
-                        <a href="/cdn-cgi/l/email-protection#c9a0a7afa689b9bba8bba8a4aba1aebba6bcb9e7aaa6a4"><span class="__cf_email__" data-cfemail="264f4840496656544754474b444e41544953560845494b">[email&#160;protected]</span></a>
-                    </div>
+                    <div class="contact-label">Location</div>
+                    <div class="contact-value">Mumbai, Maharashtra</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-label">Phone</div>
-                    <div class="contact-value">
-                        <a href="tel:+91 8879881688">+91 8879881688</a>
-                    </div>
+                    <div class="contact-value">+91 123 456 7890</div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-label">Visit</div>
-                    <div class="contact-value">Schedule a Tour</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">info@prarambhgroup.com</div>
                 </div>
             </div>
-
             <button onclick="openModal()" class="cta-button" style="margin-top: 3rem; cursor: pointer;">Schedule Consultation</button>
         </div>
     </section>
 
-    <!-- Contact Form Modal -->
+    <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">&times;</button>
             <h2 class="modal-title">Get in Touch</h2>
             <p class="modal-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
             
-            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="22dc6843-f6f1-42c7-bb21-0e951f17dcad">
-                <input type="hidden" name="subject" value="New Contact Form Submission - Prarambh Group">
-                <input type="hidden" name="from_name" value="Prarambh Group Website">
+            <form id="contactForm">
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+                <input type="hidden" name="subject" value="New Contact - Prarambh Group">
                 
                 <div class="form-group">
-                    <label class="form-label" for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" class="form-input" required>
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" name="name" class="form-input" required>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label" for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" class="form-input" required>
+                    <label class="form-label">Email *</label>
+                    <input type="email" name="email" class="form-input" required>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label" for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                    <label class="form-label">Phone *</label>
+                    <input type="tel" name="phone" class="form-input" required>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label" for="message">Message</label>
-                    <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your requirements..."></textarea>
+                    <label class="form-label">Message</label>
+                    <textarea name="message" class="form-textarea" placeholder="Tell us about your requirements..."></textarea>
                 </div>
                 
                 <button type="submit" class="form-submit">Send Message</button>
-                
                 <div id="formMessage" class="form-message"></div>
             </form>
         </div>
     </div>
 
-    <!-- Brochure Download Modal -->
+    <!-- Brochure Modal -->
     <div id="brochureModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeBrochureModal()">&times;</button>
             <h2 class="modal-title">Download Brochure</h2>
             <p class="modal-subtitle">Please fill in your details to receive our exclusive project brochure.</p>
             
-            <form id="brochureForm" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="683a7371-914e-4c6d-a293-c477cad3d62e">
-                <input type="hidden" name="subject" value="Brochure Download Request - Prarambh Group">
-                <input type="hidden" name="from_name" value="Prarambh Group Website">
-                <input type="hidden" name="redirect" value="">
+            <form id="brochureForm">
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+                <input type="hidden" name="subject" value="Brochure Download - Prarambh Group">
                 
                 <div class="form-group">
-                    <label class="form-label" for="brochure-name">Full Name *</label>
-                    <input type="text" id="brochure-name" name="name" class="form-input" required>
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" name="name" class="form-input" required>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label" for="brochure-email">Email Address *</label>
-                    <input type="email" id="brochure-email" name="email" class="form-input" required>
+                    <label class="form-label">Email *</label>
+                    <input type="email" name="email" class="form-input" required>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label" for="brochure-phone">Phone Number *</label>
-                    <input type="tel" id="brochure-phone" name="phone" class="form-input" required>
+                    <label class="form-label">Phone *</label>
+                    <input type="tel" name="phone" class="form-input" required>
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label" for="interest">Interested In</label>
-                    <select id="interest" name="interest" class="form-input">
+                    <label class="form-label">Interested In</label>
+                    <select name="interest" class="form-select">
                         <option value="">Select an option</option>
-                        <option value="1 BHK (420 Sq,ft.)">1 BHK (420 Sq,ft.)</option>
-                        <option value="1 BHK (413 Sq,ft.)">1 BHK (413 Sq,ft.)</option>
-                        <option value="3 BHK (Jodi Flat)">3 BHK (Jodi Flat)</option>
-                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="1 BHK">1 BHK (420 Sq.ft)</option>
+                        <option value="1 BHK">1 BHK (413 Sq.ft)</option>
+                        <option value="3 BHK Jodi">3 BHK Jodi Flat</option>
+                        <option value="General">General Inquiry</option>
                     </select>
                 </div>
                 
                 <button type="submit" class="form-submit">Download Brochure</button>
-                
-                <div id="brochureFormMessage" class="form-message"></div>
+                <div id="brochureMessage" class="form-message"></div>
             </form>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-main">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="./assets/prarambh-logo.png" alt="Prarambh Group Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span class="footer-logo-text" style="display: none;">PRARAMBH GROUP</span>
-                </div>
-                <p class="footer-tagline">
-                    Building excellence through innovation and commitment. Creating spaces that inspire generations.
-                </p>
-                <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YouTube">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
-                </div>
+        <div class="footer-content">
+            <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
+                <span class="logo-text" style="display: block; color: var(--primary-light);">PRARAMBH GROUP</span>
             </div>
-
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" onclick="openBrochureModal(); return false;">Download Brochure</a></li>
-                </ul>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="disclaimer.html">Disclaimer</a>
             </div>
-
-            <div class="footer-section">
-                <h4>Our Projects</h4>
-                <ul class="footer-links">
-                    <li><a href="#projects">Vimal Paradise</a></li>
-                    <li><a href="#">Ongoing Projects</a></li>
-                    <li><a href="#">Completed Projects</a></li>
-                    <li><a href="#">Upcoming Projects</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Get In Touch</h4>
-                <div class="footer-contact-item">
-                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    <span>Mumbai, Maharashtra, India</span>
-                </div>
-                <div class="footer-contact-item">
-                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    <span>+91 123 456 7890</span>
-                </div>
-                <div class="footer-contact-item">
-                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="066f6860694676746774676b646e61746973762865696b">[email&#160;protected]</a></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p class="footer-copyright">© 2026 Prarambh Group. All rights reserved. Building Excellence Since Foundation.</p>
-            <ul class="footer-legal">
-                <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="./terms.html">Terms of Service</a></li>
-                <li><a href="./disclaimer.html">Disclaimer</a></li>
-                <li><a href="./cookie-policy.html">Cookie Policy</a></li>
-            </ul>
+            <p class="footer-copyright">© 2026 Prarambh Group. All rights reserved.</p>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Add scroll animation for elements
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.feature-item, .gallery-item, .meta-item').forEach(el => {
-    observer.observe(el);
-});
-
-// Navbar background on scroll
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        nav.style.background = 'rgba(248, 247, 244, 0.98)';
-        nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
-    } else {
-        nav.style.background = 'rgba(248, 247, 244, 0.95)';
-        nav.style.boxShadow = 'none';
-    }
-});
-
-// Contact Form Modal Functions
+    <script>
+// Modal Functions
 function openModal() {
     document.getElementById('contactModal').classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -1338,7 +916,6 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Brochure Modal Functions
 function openBrochureModal() {
     document.getElementById('brochureModal').classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -1349,156 +926,142 @@ function closeBrochureModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Wait for DOM to be fully loaded before adding event listeners
+// Wait for DOM
 document.addEventListener('DOMContentLoaded', function() {
-    // Close modal when clicking outside
-    const contactModal = document.getElementById('contactModal');
-    if (contactModal) {
-        contactModal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
-    }
+    });
 
-    const brochureModal = document.getElementById('brochureModal');
-    if (brochureModal) {
-        brochureModal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeBrochureModal();
-            }
-        });
-    }
+    // Close modals
+    document.getElementById('contactModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
 
-    // Close modal with Escape key
+    document.getElementById('brochureModal').addEventListener('click', function(e) {
+        if (e.target === this) closeBrochureModal();
+    });
+
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeModal();
             closeBrochureModal();
         }
     });
-});
 
-// Form submission handlers - wait for DOM
-document.addEventListener('DOMContentLoaded', function() {
-    // Contact Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+    // Contact Form
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('.form-submit');
+        const msg = document.getElementById('formMessage');
+        
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(this)
+            });
             
-            const submitBtn = this.querySelector('.form-submit');
-            const messageDiv = document.getElementById('formMessage');
+            const data = await response.json();
             
-            // Disable submit button
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+            if (data.success) {
+                msg.textContent = 'Thank you! We will contact you soon.';
+                msg.className = 'form-message success';
+                msg.style.display = 'block';
+                this.reset();
+                setTimeout(() => {
+                    closeModal();
+                    msg.style.display = 'none';
+                }, 2000);
+            } else {
+                throw new Error('Failed');
+            }
+        } catch (error) {
+            msg.textContent = 'Error! Please try again.';
+            msg.className = 'form-message error';
+            msg.style.display = 'block';
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+        }
+    });
+
+    // Brochure Form
+    document.getElementById('brochureForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('.form-submit');
+        const msg = document.getElementById('brochureMessage');
+        
+        btn.disabled = true;
+        btn.textContent = 'Processing...';
+        
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(this)
+            });
             
-            // Get form data
-            const formData = new FormData(this);
+            const data = await response.json();
             
-            try {
-                // Send to Web3Forms
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                });
+            if (data.success) {
+                msg.textContent = 'Thank you! Download starting...';
+                msg.className = 'form-message success';
+                msg.style.display = 'block';
+                this.reset();
                 
-                const data = await response.json();
-                
-                if (data.success) {
-                    // Success
-                    messageDiv.textContent = 'Thank you! We will contact you soon.';
-                    messageDiv.className = 'form-message success';
-                    messageDiv.style.display = 'block';
-                    this.reset();
-                    
-                    // Close modal after 2 seconds
+                // Create sample PDF (REPLACE WITH YOUR ACTUAL PDF URL)
+                setTimeout(() => {
+                    window.open('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', '_blank');
                     setTimeout(() => {
-                        closeModal();
-                        messageDiv.style.display = 'none';
-                    }, 2000);
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                // Error
-                messageDiv.textContent = 'Oops! Something went wrong. Please try again.';
-                messageDiv.className = 'form-message error';
-                messageDiv.style.display = 'block';
-            } finally {
-                // Re-enable submit button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
+                        closeBrochureModal();
+                        msg.style.display = 'none';
+                    }, 1000);
+                }, 500);
+            } else {
+                throw new Error('Failed');
+            }
+        } catch (error) {
+            msg.textContent = 'Error! Please try again.';
+            msg.className = 'form-message error';
+            msg.style.display = 'block';
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Download Brochure';
+        }
+    });
+
+    // Animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
             }
         });
-    }
+    }, { threshold: 0.1 });
 
-    // Brochure Form submission handling
-    const brochureForm = document.getElementById('brochureForm');
-    if (brochureForm) {
-        brochureForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const submitBtn = this.querySelector('.form-submit');
-    const messageDiv = document.getElementById('brochureFormMessage');
-    
-    // Disable submit button
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Processing...';
-    
-    // Get form data
-    const formData = new FormData(this);
-    
-    try {
-        // Send to Web3Forms
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            // Success - trigger download
-            messageDiv.textContent = 'Thank you! Your download will begin shortly...';
-            messageDiv.className = 'form-message success';
-            messageDiv.style.display = 'block';
-            this.reset();
-            
-            // Trigger brochure download
-            setTimeout(() => {
-                // Download the brochure PDF
-                const link = document.createElement('a');
-                link.href = './brochures/vimal-paradise-brochure.pdf';
-                link.download = 'Vimal-Paradise-Brochure.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                
-                // Close modal after download starts
-                setTimeout(() => {
-                    closeBrochureModal();
-                    messageDiv.style.display = 'none';
-                }, 1500);
-            }, 500);
+    document.querySelectorAll('.feature-item, .gallery-item, .meta-item').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Navbar on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            nav.style.background = 'rgba(248, 247, 244, 0.98)';
+            nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
         } else {
-            throw new Error('Form submission failed');
+            nav.style.background = 'rgba(248, 247, 244, 0.95)';
+            nav.style.boxShadow = 'none';
         }
-    } catch (error) {
-        // Error
-        messageDiv.textContent = 'Oops! Something went wrong. Please try again.';
-        messageDiv.className = 'form-message error';
-        messageDiv.style.display = 'block';
-    } finally {
-        // Re-enable submit button after delay
-        setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Download Brochure';
-        }, 2000);
-    }
-        });
-    }
+    });
 });
     </script>
 </body>
