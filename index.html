@@ -283,8 +283,8 @@ nav {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 4rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 3rem);
     margin-top: 4rem;
 }
 
@@ -615,6 +615,10 @@ footer {
         min-height: 350px;
     }
 
+    .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -665,7 +669,7 @@ footer {
 
     .features-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
     }
 
     .gallery-grid {
