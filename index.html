@@ -195,6 +195,16 @@ nav {
     padding: 8rem 3rem;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+}
+
+.project-section::before {
+    content: '';
+    position: absolute;
+    inset: 2.5rem 1.5rem;
+    border: 1px solid rgba(26, 26, 26, 0.06);
+    border-radius: 24px;
+    pointer-events: none;
 }
 
 .section-title {
@@ -211,6 +221,11 @@ nav {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     margin-bottom: 5rem;
+    background: #ffffff;
+    border: 1px solid rgba(26, 26, 26, 0.09);
+    box-shadow: 0 20px 45px rgba(26, 26, 26, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .project-image {
@@ -241,6 +256,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: linear-gradient(160deg, #fffdfa 0%, #f8f5ef 100%);
 }
 
 .project-name {
@@ -285,7 +301,7 @@ nav {
 
 /* Features */
 .features {
-    background: var(--primary-dark);
+    background: linear-gradient(155deg, #1a1a1a 0%, #2e2b25 50%, #1f1d1a 100%);
     color: var(--primary-light);
     padding: 8rem 3rem;
 }
@@ -316,6 +332,11 @@ nav {
     text-align: center;
     opacity: 0;
     animation: fadeInUp 0.6s ease forwards;
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 16px;
+    background: rgba(248, 247, 244, 0.04);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
 }
 
 .feature-icon {
@@ -349,6 +370,16 @@ nav {
     padding: 8rem 3rem;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    inset: 2.5rem 1.5rem;
+    border: 1px solid rgba(26, 26, 26, 0.06);
+    border-radius: 24px;
+    pointer-events: none;
 }
 
 .gallery-grid {
@@ -366,6 +397,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 16px;
+    box-shadow: 0 16px 32px rgba(26, 26, 26, 0.1);
 }
 
 .gallery-item button {
@@ -470,13 +503,18 @@ nav {
 /* Contact */
 .contact {
     padding: 8rem 3rem;
-    background: var(--border-light);
+    background: linear-gradient(180deg, #f2ece3 0%, #f8f7f4 100%);
 }
 
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    background: #ffffff;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(26, 26, 26, 0.08);
+    padding: 3.5rem 2rem;
 }
 
 .contact-info {
@@ -489,6 +527,11 @@ nav {
 
 .contact-item {
     text-align: center;
+    min-width: 180px;
+    background: rgba(248, 247, 244, 0.7);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-radius: 14px;
+    padding: 1.2rem 1rem;
 }
 
 .contact-label {
