@@ -16,6 +16,7 @@
             --text-dark: #2c2c2c;
             --text-light: #666;
             --border-light: #e8e6e1;
+            --legal-nav-height: 94px;
         }
 
         * {
@@ -46,7 +47,7 @@
             margin: 0 auto;
             padding: 1.5rem 3rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
         }
 
@@ -70,12 +71,13 @@
 
         .logo span {
             color: var(--primary-dark);
+            white-space: nowrap;
         }
 
         .legal-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 8rem 3rem 4rem;
+            padding: calc(var(--legal-nav-height) + 2rem) 3rem 4rem;
         }
 
         h1 {
@@ -176,8 +178,26 @@
         }
 
         @media (max-width: 768px) {
+            :root {
+                --legal-nav-height: 76px;
+            }
+
+            .nav-container {
+                padding: 0.85rem 1rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+                letter-spacing: 1px;
+                gap: 0.5rem;
+            }
+
+            .logo img {
+                height: 34px;
+            }
+
             .legal-container {
-                padding: 6rem 1.5rem 3rem;
+                padding: calc(var(--legal-nav-height) + 1.5rem) 1.25rem 3rem;
             }
 
             h1 {
