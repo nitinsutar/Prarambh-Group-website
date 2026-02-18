@@ -1286,9 +1286,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 msg.style.display = 'block';
                 this.reset();
                 
-                // Create sample PDF (REPLACE WITH YOUR ACTUAL PDF URL)
+                // Trigger brochure download
                 setTimeout(() => {
-                    window.open('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', '_blank');
+                    const link = document.createElement('a');
+                    link.href = './brochures/vimal-paradise-brochure.pdf';
+                    link.download = 'Vimal-Paradise-Brochure.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
                     setTimeout(() => {
                         closeBrochureModal();
                         msg.style.display = 'none';
