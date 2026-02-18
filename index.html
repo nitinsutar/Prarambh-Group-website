@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PKZ5QiAj6Ta86w+fsb2TkR4j8p9fW7H0I1GtIsfRSAxEPPYUajF2/ME8w==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
     <style>
 :root {
@@ -69,7 +70,7 @@ nav {
 }
 
 .logo img {
-    height: 40px;
+    height: 48px;
     width: auto;
     object-fit: contain;
 }
@@ -294,7 +295,16 @@ nav {
 }
 
 .feature-icon {
-    font-size: 2.5rem;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.08);
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
     color: var(--accent-gold);
 }
@@ -568,6 +578,21 @@ footer {
     margin-top: 2rem;
 }
 
+.footer-contact {
+    font-size: 0.95rem;
+    color: rgba(248, 247, 244, 0.75);
+    line-height: 1.8;
+}
+
+.footer-contact a {
+    color: rgba(248, 247, 244, 0.9);
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: var(--accent-gold);
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -674,7 +699,7 @@ footer {
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50/1a1a1a/d4af37?text=PRARAMBH" alt="Prarambh Group" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="assets/prarambh-logo.png" alt="Prarambh Group" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <span class="logo-text" style="display: none;">PRARAMBH GROUP</span>
             </div>
             <ul class="nav-links">
@@ -741,22 +766,22 @@ footer {
             <h2 class="section-title">Why Choose Prarambh Group</h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon">🏗️</div>
+                    <div class="feature-icon"><i class="fa-solid fa-building"></i></div>
                     <h3 class="feature-title">Premium Quality</h3>
                     <p class="feature-description">Built with the finest materials and exceptional craftsmanship</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">📍</div>
+                    <div class="feature-icon"><i class="fa-solid fa-location-dot"></i></div>
                     <h3 class="feature-title">Prime Locations</h3>
                     <p class="feature-description">Strategically located for connectivity and lifestyle</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">✨</div>
+                    <div class="feature-icon"><i class="fa-solid fa-gem"></i></div>
                     <h3 class="feature-title">World-Class Amenities</h3>
                     <p class="feature-description">Everything you need for modern living</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">🏅</div>
+                    <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
                     <h3 class="feature-title">Trusted Developer</h3>
                     <p class="feature-description">Years of excellence in real estate</p>
                 </div>
@@ -893,13 +918,19 @@ footer {
     <footer>
         <div class="footer-content">
             <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
-                <span class="logo-text" style="display: block; color: var(--primary-light);">PRARAMBH GROUP</span>
+                <img src="assets/prarambh-logo.png" alt="Prarambh Group" style="height: 64px; filter: brightness(1.05);">
             </div>
             <div class="footer-links">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="terms.html">Terms & Conditions</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
                 <a href="disclaimer.html">Disclaimer</a>
             </div>
+            <p class="footer-contact">
+                31, Seagull Angelore Society, Pestom Sagar, Chembur, Mumbai - 400089<br>
+                <a href="tel:+918879881688">+91 8879881688</a> / <a href="tel:+918879881788">+91 8879881788</a> ·
+                <a href="mailto:sales@prarambhgroup.co.in">sales@prarambhgroup.co.in</a>
+            </p>
             <p class="footer-copyright">© 2026 Prarambh Group. All rights reserved.</p>
         </div>
     </footer>
