@@ -396,6 +396,77 @@ nav {
     transform: scale(1.1);
 }
 
+/* Location Map */
+.location-map {
+    padding: 8rem 3rem;
+    background: linear-gradient(180deg, #f2ece3 0%, #f8f7f4 100%);
+}
+
+.location-map-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.location-map-description {
+    color: rgba(26, 26, 26, 0.75);
+    margin: 1rem auto 0;
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+.map-card {
+    margin-top: 3rem;
+    background: #ffffff;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    box-shadow: 0 20px 45px rgba(26, 26, 26, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.map-embed {
+    width: 100%;
+    min-height: 420px;
+    border: 0;
+    display: block;
+}
+
+.map-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: #ffffff;
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.map-coordinates {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: var(--text-dark);
+    text-transform: uppercase;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--primary-dark);
+    text-decoration: none;
+    border: 1px solid rgba(26, 26, 26, 0.18);
+    padding: 0.65rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.map-link:hover {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
 /* Contact */
 .contact {
     padding: 8rem 3rem;
@@ -775,6 +846,7 @@ footer {
     .project-section,
     .features,
     .gallery,
+    .location-map,
     .contact {
         padding: 5rem 1.5rem;
     }
@@ -810,6 +882,15 @@ footer {
     .contact-info {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .map-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .map-embed {
+        min-height: 320px;
     }
     
     .modal-content {
@@ -985,6 +1066,21 @@ footer {
             <button id="lightboxNext" class="lightbox-nav" aria-label="Next image">&#10095;</button>
         </div>
     </div>
+
+    <!-- Location Map -->
+    <section class="location-map" aria-labelledby="location-map-title">
+        <div class="location-map-container">
+            <h2 class="section-title" id="location-map-title">Project Location</h2>
+            <p class="location-map-description">Find Vimal Paradise at a prime and well-connected address. The map below highlights the exact project position for quick navigation.</p>
+            <div class="map-card">
+                <iframe class="map-embed" title="Vimal Paradise map location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=19.170667,72.95625&z=16&output=embed"></iframe>
+                <div class="map-footer">
+                    <p class="map-coordinates">19°10'14.4&quot;N 72°57'22.5&quot;E</p>
+                    <a class="map-link" href="https://maps.google.com/?q=19.170667,72.95625" target="_blank" rel="noopener noreferrer">Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
